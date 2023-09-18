@@ -4,28 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parameter Selection</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Define custom CSS classes for text color */
+        .orange-text {
+            color: orange;
+        }
+        .blue-text {
+            color: blue;
+        }
+        .green-text {
+            color: green;
+        }
+    </style>
 </head>
 <body>
-    <h1>Parameter Selection</h1>
-    <form>
-        <label for="key">Select Key:</label>
-        <select id="key" name="key">
-            {% for key in keys %}
-                <option value="{{ key }}">{{ key }}</option>
-            {% endfor %}
-        </select>
-        <br><br>
+    <div class="container mt-5">
+        <h1 class="display-4">Parameter Selection</h1>
+        <form>
+            <div class="form-group">
+                <label for="key">Select Key:</label>
+                <select class="form-control" id="key" name="key">
+                    {% for key in keys %}
+                        <option value="{{ key }}">{{ key }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <label for="selectedOption">Select Option:</label>
-        <select id="selectedOption" name="selectedOption">
-        </select>
-        <br><br>
+            <div class="form-group">
+                <label for="selectedOption">Select Option:</label>
+                <select class="form-control" id="selectedOption" name="selectedOption">
+                </select>
+            </div>
 
-        <h2>Details:</h2>
-        <p>Calculated: <span id="calculated"></span></p>
-        <p>Partial: <span id="partial"></span></p>
-        <p>Programmed Parameters: <span id="programmedParams"></span></p>
-    </form>
+            <h2>Details:</h2>
+            <p>Calculated: <span id="calculated" class="green-text"></span></p>
+            <p>Partial: <span id="partial" class="orange-text"></span></p>
+            <p>Programmed Parameters: <span id="programmedParams" class="blue-text"></span></p>
+        </form>
+    </div>
+
+    <!-- Include Bootstrap JavaScript and jQuery (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
         const keySelect = document.getElementById("key");
@@ -33,6 +56,35 @@
         const calculatedField = document.getElementById("calculated");
         const partialField = document.getElementById("partial");
         const programmedParamsField = document.getElementById("programmedParams");
+
+        // Event listener to update text color and background color based on content
+        calculatedField.addEventListener("DOMSubtreeModified", function () {
+            updateFieldColor(this);
+        });
+
+        partialField.addEventListener("DOMSubtreeModified", function () {
+            updateFieldColor(this);
+        });
+
+        programmedParamsField.addEventListener("DOMSubtreeModified", function () {
+            updateFieldColor(this);
+        });
+
+        function updateFieldColor(field) {
+            if (field.textContent === "NONE") {
+                field.style.color = "blue";
+                field.style.backgroundColor = "yellow";
+            } else if (field.textContent === "NO") {
+                field.style.color = "red";
+                field.style.backgroundColor = "";
+            } else if (field.textContent === "YES") {
+                field.style.color = "green";
+                field.style.backgroundColor = "yellow";
+            } else {
+                field.style.color = "blue";
+                field.style.backgroundColor = "";
+            }
+        }
 
         // Function to populate "Select Option" based on the selected key
         function populateSelectedOptions(key) {
