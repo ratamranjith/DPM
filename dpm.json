@@ -1,0 +1,248 @@
+{
+    "Non-Time Based": [
+       {
+          "option": "Dose Amount, Rate, VTBI, Duration",
+          "Calculated": "VTBI, Duration",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Amount, Rate, VTBI",
+          "Calculated": "VTBI, Duration",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Amount, Rate, Duration",
+          "Calculated": "VTBI, Duration",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Amount, VTBI, Duration",
+          "Calculated": "Rate, VTBI",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Amount, Rate",
+          "Calculated": "VTBI, Duration",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Amount, VTBI",
+          "Calculated": "VTBI",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "Dose, VTBI"
+       },
+       {
+          "option": "Dose Amount, Duration",
+          "Calculated": "Rate, VTBI",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Amount",
+          "Calculated": "VTBI",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "Dose, VTBI"
+       },
+       {
+          "option": "Dose Amount = 0, Rate, VTBI, Duration",
+          "Calculated": "Dose Amount, Duration",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Amount = 0, Rate, VTBI",
+          "Calculated": "Dose Amount, Duration",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Amount = 0, Rate, Duration",
+          "Calculated": "Dose Amount, VTBI",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Amount = 0, VTBI, Duration",
+          "Calculated": "Dose Amount, Rate",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Amount = 0, Rate",
+          "Calculated": "NONE",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "Rate"
+       },
+       {
+          "option": "Dose Amount = 0, VTBI",
+          "Calculated": "Dose",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "Dose, VTBI"
+       },
+       {
+          "option": "Dose Amount = 0, Duration",
+          "Calculated": "NONE",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "Duration"
+       },
+       {
+          "option": "Dose Amount = 0",
+          "Calculated": "NONE",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "NONE"
+       }
+    ],
+    "Time-Based": [
+       {
+          "option": "Dose Rate, Rate, VTBI, Duration",
+          "Calculated": "Rate, Duration",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Rate, Rate, VTBI",
+          "Calculated": "Rate, Duration",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Rate, Rate, Duration",
+          "Calculated": "Rate, VTBI",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Rate, VTBI, Duration",
+          "Calculated": "Rate, Duration",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Rate, Rate",
+          "Calculated": "Rate",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "Dose Rate, Rate"
+       },
+       {
+          "option": "Dose Rate, VTBI",
+          "Calculated": "Rate, Duration",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Rate, Duration",
+          "Calculated": "Rate, VTBI",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Rate",
+          "Calculated": "Rate",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "Dose Rate, Rate"
+       },
+       {
+          "option": "Dose Rate = 0, Rate, VTBI, Duration",
+          "Calculated": "Dose Rate, Duration",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Rate = 0, Rate, VTBI",
+          "Calculated": "Dose Rate, Duration",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Rate = 0, Rate, Duration",
+          "Calculated": "Dose Rate, VTBI",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Dose, Rate, VTBI, Duration"
+       },
+       {
+          "option": "Dose Rate = 0, VTBI, Duration",
+          "Calculated": "NONE",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "VTBI"
+       },
+       {
+          "option": "Dose Rate = 0, Rate",
+          "Calculated": "Dose Rate",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "Dose Rate, Rate"
+       },
+       {
+          "option": "Dose Rate = 0, VTBI",
+          "Calculated": "NONE",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "VTBI"
+       },
+       {
+          "option": "Dose Rate = 0, Duration",
+          "Calculated": "NONE",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "Duration"
+       },
+       {
+          "option": "Dose Rate = 0",
+          "Calculated": "NONE",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "NONE"
+       }
+    ],
+    "mL/hr based": [
+       {
+          "option": "Rate, VTBI, Duration",
+          "Calculated": "Duration",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Rate, VTBI, Duration"
+       },
+       {
+          "option": "Rate, VTBI",
+          "Calculated": "Duration",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Rate, VTBI, Duration"
+       },
+       {
+          "option": "Rate, Duration",
+          "Calculated": "VTBI",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Rate, VTBI, Duration"
+       },
+       {
+          "option": "Rate",
+          "Calculated": "NONE",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "Rate"
+       },
+       {
+          "option": "Rate = 0, VTBI, Duration",
+          "Calculated": "Rate",
+          "Partial": "NO",
+          "ProgrammedParametersOnPump": "Rate, VTBI, Duration"
+       },
+       {
+          "option": "Rate = 0, VTBI",
+          "Calculated": "NONE",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "VTBI"
+       },
+       {
+          "option": "Rate = 0, Duration",
+          "Calculated": "NONE",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "Duration"
+       },
+       {
+          "option": "Rate = 0",
+          "Calculated": "NONE",
+          "Partial": "YES",
+          "ProgrammedParametersOnPump": "NONE"
+       }
+    ]
+ }

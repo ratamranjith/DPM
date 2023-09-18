@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameter Selection</title>
+</head>
+<body>
+    <h1>Parameter Selection</h1>
+    <form>
+        <label for="key">Select Key:</label>
+        <select id="key" name="key">
+            {% for key in keys %}
+                <option value="{{ key }}">{{ key }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <label for="selectedOption">Select Option:</label>
+        <select id="selectedOption" name="selectedOption">
+        </select>
+        <br><br>
+
+        <h2>Details:</h2>
+        <p>Calculated: <span id="calculated"></span></p>
+        <p>Partial: <span id="partial"></span></p>
+        <p>Programmed Parameters: <span id="programmedParams"></span></p>
+    </form>
+
+    <script>
+        const keySelect = document.getElementById("key");
+        const selectedOptionSelect = document.getElementById("selectedOption");
+        const calculatedField = document.getElementById("calculated");
+        const partialField = document.getElementById("partial");
+        const programmedParamsField = document.getElementById("programmedParams");
+
+        // Function to populate "Select Option" based on the selected key
+        function populateSelectedOptions(key) {
+            // Make an AJAX request to the Flask server to get the options
+            fetch('/get_options', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `key=${key}`,
+            })
+            .then(response => response.json())
+            .then(data => {
+                selectedOptionSelect.innerHTML = ''; // Clear the previous options
+                data.options.forEach(option => {
+                    const optionElement = document.createElement("option");
+                    optionElement.value = option;
+                    optionElement.text = option;
+                    selectedOptionSelect.appendChild(optionElement);
+                });
+                // Trigger change event to populate details based on the selected option
+                selectedOptionSelect.dispatchEvent(new Event('change'));
+            });
+        }
+
+        // Event listener to populate "Select Option" when the key is changed
+        keySelect.addEventListener("change", function () {
+            const selectedKey = this.value;
+            populateSelectedOptions(selectedKey);
+        });
+
+        // Event listener to update details fields based on the selected "Select Option"
+        selectedOptionSelect.addEventListener("change", function () {
+            const selectedOption = this.value;
+            const selectedKey = keySelect.value;
+            fetch('/get_details', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `key=${selectedKey}&selected_option=${selectedOption}`,
+            })
+            .then(response => response.json())
+            .then(data => {
+                calculatedField.textContent = data.calculated;
+                partialField.textContent = data.partial;
+                programmedParamsField.textContent = data.programmed_params;
+            });
+        });
+
+        // Populate options initially
+        populateSelectedOptions(keySelect.value);
+    </script>
+</body>
+</html>
